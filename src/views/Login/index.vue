@@ -10,6 +10,8 @@
         name="mobile"
         placeholder="请输入手机号"
         :rules="mobileRules"
+        type="number"
+        maxlength="11"
       >
         <template #label>
           <span class="toutiao toutiao-shouji"></span>
@@ -21,6 +23,8 @@
         name="code"
         placeholder="请输入验证码"
         :rules="codeRules"
+        type="number"
+        maxlength="6"
       >
         <template #label>
           <span class="toutiao toutiao-yanzhengma"></span>
@@ -78,7 +82,7 @@ export default {
         console.log(data)
         this.SETTOKEN(data.data)
         // 跳转路由
-        this.$router.push('profile')
+        this.$router.push('/my')
         // 成功的提示
         this.$toast.success('登录成功')
       } catch (error) {

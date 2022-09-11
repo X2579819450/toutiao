@@ -1,6 +1,6 @@
 // user.js 划分是跟后端接口文档
 import request from '@/utils/request'
-
+// import store from '@/store'
 /**
  *
  * @param {String} mobile
@@ -25,5 +25,13 @@ export const login = (mobile, code) => {
 export const sendCodeAPI = (mobile) => {
   return request({
     url: `/v1_0/sms/codes/${mobile}`
+  })
+}
+export const getuseInfoAPI = () => {
+  return request({
+    url: '/v1_0/user'
+    // headers: {
+    //   Authorization: `Bearer ${store.state.tokenObj.token}`
+    // }
   })
 }
